@@ -9,7 +9,7 @@ public class CTimeTest {
 	@Test
 		public void setTimeTest() {
 			CTime ct = new CTime();
-			for (int h=-60; h<60;h++)
+			for (int h=-100; h<100;h++)
 			{
 				for (int m = -100; m<100; m++)
 				{
@@ -26,7 +26,7 @@ public class CTimeTest {
 					}
 					else if(h>=0 && m>=0 )
 					{
-						if(h>23 && m>59)
+						if(h>23 || m>59)
 						{
 							assertFalse(ct.setTime(h, m));
 						}
