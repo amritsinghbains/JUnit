@@ -1,8 +1,8 @@
 package Junit;
 
 public class CTime {
-	private int hour;
-	private int minute;
+	public int hour;
+	public int minute;
 	
 	public Boolean setTime(int hour, int minute){
 		Boolean result = false;
