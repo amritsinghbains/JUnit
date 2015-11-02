@@ -7,8 +7,11 @@ import org.junit.Test;
 public class CTimeTest {
 
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void setTimeTest() {
+		CTime ct = new CTime();
+		assertTrue(ct.setTime(11, 10));
+		assertFalse(ct.setTime(122, 10));
+		
 	}
 
 asdfasdfasdf
