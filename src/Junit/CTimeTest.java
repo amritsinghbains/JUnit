@@ -7,9 +7,6 @@ import org.junit.Test;
 public class CTimeTest {
 
 	@Test
-	public void test() {
-	//	fail("Not yet implemented");
-	}
 		public void setTimeTest() {
 			CTime ct = new CTime();
 			for (int h=-60; h<60;h++)
