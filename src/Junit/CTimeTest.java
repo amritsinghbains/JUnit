@@ -7,12 +7,39 @@ import org.junit.Test;
 public class CTimeTest {
 
 	@Test
-	public void setTimeTest() {
-		CTime ct = new CTime();
-		assertTrue(ct.setTime(11, 10));
-		assertFalse(ct.setTime(122, 10));
-		
+		public void setTimeTest() {
+			CTime ct = new CTime();
+			for (int h=-60; h<60;h++)
+			{
+				for (int m = -100; m<100; m++)
+				{
+					System.out.println("Hours: " + h + "Minutes: " + m );
+					
+					if(h<0 && m<0)
+					{
+						assertFalse(ct.setTime(h, m));
+					}
+					else if (h<0 && m>0)
+					{
+						assertFalse(ct.setTime(h, m));
+						
+					}
+					else if(h>=0 && m>=0 )
+					{
+						if(h>23 && m>59)
+						{
+							assertFalse(ct.setTime(h, m));
+						}
+						else 
+						{
+							assertTrue(ct.setTime(h, m));
+						}
+						
+					}
+					
+						
 	}
+		}
+		}
 
-asdfasdfasdf
 }
