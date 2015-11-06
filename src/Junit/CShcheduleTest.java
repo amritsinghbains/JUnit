@@ -15,28 +15,22 @@ public class CShcheduleTest {
 		cm1.setTimes(1, 0, 2, 0);
 		cm2.setTimes(3, 0, 4, 0);			
 		assertFalse(cs.checkOverlap(cm1, cm2));
-		System.out.println(cs.checkOverlap(cm1, cm2));
+		
 		cm1.setTimes(1, 0, 2, 0);
 		cm2.setTimes(1, 30, 2, 30);			
-		
-		System.out.println(cs.checkOverlap(cm1, cm2));
 		assertTrue(cs.checkOverlap(cm1, cm2));
-
+		
 		cm1.setTimes(1, 30, 2, 30);
 		cm2.setTimes(1, 0, 2, 0);			
-		System.out.println(cs.checkOverlap(cm1, cm2));
 		assertTrue(cs.checkOverlap(cm1, cm2));
 
 		cm1.setTimes(1, 0, 1, 10);
 		cm2.setTimes(1, 0, 2, 0);			
-		System.out.println(cs.checkOverlap(cm1, cm2));
 		assertTrue(cs.checkOverlap(cm1, cm2));
 		
 		cm1.setTimes(1, 0, 2, 0);
 		cm2.setTimes(1, 0, 2, 0);			
-		System.out.println(cs.checkOverlap(cm1, cm2));
 		assertTrue(cs.checkOverlap(cm1, cm2));
-
 	}
 	
 	@Test
