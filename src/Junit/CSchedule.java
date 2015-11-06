@@ -6,13 +6,13 @@ public class CSchedule {
 		Boolean result = true;	
 		CMeeting m3;
 		
-		if((60*m1.start.hour + m1.start.minute) < (60*m2.start.hour + m2.start.minute)){
+		if((60*m1.start.hour + m1.start.minute) > (60*m2.start.hour + m2.start.minute)){
 			m3=m1;
 			m1=m2;
 			m2=m3;
 		}
 				
-		if((60*m1.end.hour + m1.end.minute) - (60*m2.start.hour + m2.start.minute) > 0){
+		if((60*m1.end.hour + m1.end.minute) - (60*m2.start.hour + m2.start.minute) < 0){
 			result = false;
 		}
 		

@@ -5,11 +5,38 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class CShcheduleTest {
-	public void setScheduleTest()
+	
+	@Test
+	public void checkOverlapTest()
 	{
 		CSchedule cs = new CSchedule();
-		CMeeting cm = new CMeeting();
-		CTime ct = new CTime();	
+		CMeeting cm1 = new CMeeting();
+		CMeeting cm2 = new CMeeting();
+		cm1.setTimes(1, 0, 2, 0);
+		cm2.setTimes(3, 0, 4, 0);			
+		assertFalse(cs.checkOverlap(cm1, cm2));
+		System.out.println(cs.checkOverlap(cm1, cm2));
+		cm1.setTimes(1, 0, 2, 0);
+		cm2.setTimes(1, 30, 2, 30);			
+		
+		System.out.println(cs.checkOverlap(cm1, cm2));
+		assertTrue(cs.checkOverlap(cm1, cm2));
+
+		cm1.setTimes(1, 30, 2, 30);
+		cm2.setTimes(1, 0, 2, 0);			
+		System.out.println(cs.checkOverlap(cm1, cm2));
+		assertTrue(cs.checkOverlap(cm1, cm2));
+
+		cm1.setTimes(1, 0, 1, 10);
+		cm2.setTimes(1, 0, 2, 0);			
+		System.out.println(cs.checkOverlap(cm1, cm2));
+		assertTrue(cs.checkOverlap(cm1, cm2));
+		
+		cm1.setTimes(1, 0, 2, 0);
+		cm2.setTimes(1, 0, 2, 0);			
+		System.out.println(cs.checkOverlap(cm1, cm2));
+		assertTrue(cs.checkOverlap(cm1, cm2));
+
 	}
 	
 	@Test
